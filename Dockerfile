@@ -22,4 +22,4 @@ RUN sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
 RUN openrc; touch /run/openrc/softlevel;
 RUN /etc/init.d/sshd start;
 EXPOSE 80 22
-ENTRYPOINT   rc-ssh start rc-service nginx start; sh;
+ENTRYPOINT   rc-ssh start; rc-service nginx start; sh;
